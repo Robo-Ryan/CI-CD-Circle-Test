@@ -1,3 +1,18 @@
+
+version: 2.1
+
+jobs:
+  hello-world-job:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - run: echo "Hello, World!"
+
+workflows:
+  hello-world-workflow:
+    jobs:
+      - hello-world-job
+
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
